@@ -5,7 +5,7 @@
 <mapper namespace="com.bwjf.mapper.AreaMapper">
 	<!-- 查询所有区域信息 -->
 	<select id="getAllArea" resultType="area">
-		select areaId,name,parentId,link from area where status=#{status} order by areaId asc
+		select areaId,name,parentId,link,description from area where status=#{status} order by areaId asc
 	</select>
 	<!-- 联级的删除区域根据ID -->
 	<delete id="deleteById" parameterType="int">

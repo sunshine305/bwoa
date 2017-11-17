@@ -68,6 +68,29 @@ public class AreaController {
 	}
 	
 	/*
+	 * ztree实现区域树的加载-不要部门
+	 */
+	@RequestMapping("/treeNOBM.do")
+	@ResponseBody
+	public List<Area> treeNOBM(){
+		try {
+			//返回有效的区域信息
+			List<Area> areas = new ArrayList<>();
+			List<Area> aList = areaService.getAllArea(1);
+			for (Area area : aList) {
+
+				if( area.getDescription().indexOf("部门")==-1) {
+					areas.add(area);
+				}
+			}
+			return areas;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	/*
 	 * 跳转区域树
 	 * 
 	 */
