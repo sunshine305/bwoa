@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bwjf.mapper.EquipmentMapper">
+	<!-- 获取所有设备的名称 -->
+	<select id="getAllName" resultType="String">
+		select name from equipment
+	</select>
+	<!-- 通过名称获取设备ID -->
+	<select id="getIdByName" parameterType="String" resultType="int">
+		select equipmentId from equipment where name=#{name}
+	</select>
+	<!-- 通过id获取名字 -->
+	<select id="getNameById" parameterType="int" resultType="String">
+		select name from equipment where equipmentId=#{equipmentId}
+	</select>
+</mapper>

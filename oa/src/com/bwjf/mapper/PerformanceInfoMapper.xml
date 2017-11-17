@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bwjf.mapper.PerformanceInfoMapper">
+	<!-- 保存设备部分信息-->
+	<insert id="saveEquipmentInfo" parameterType="performanceInfo">
+		insert into performanceInfo
+		(employeeId,equipmentId,quantity,createDate,isInvoice)
+		values(#{employeeId},#{equipmentId},
+		#{quantity},#{createDate},#{isInvoice})
+	</insert>
+	<!-- 保存服务费部分信息 -->
+	<insert id="saveServiceChargeInfo" parameterType="performanceInfo">
+		insert into performanceInfo
+		(employeeId,serviceChargeId,quantity,createDate,isInvoice)
+		values(#{employeeId},#{serviceChargeId},
+		#{quantity},#{createDate},#{isInvoice})
+	</insert>
+	
+	<!-- 查询符合条件的信息 -->
+	<select id="getInfoByCondition" resultType="performanceInfoVo">
+		select * from performanceInfo where employeeId=#{employeeId,jdbcType=INTEGER} and 
+		trunc(createDate)= to_date(#{createDate,jdbcType=VARCHAR},'yy-MM-dd')
+	</select>
+</mapper>
