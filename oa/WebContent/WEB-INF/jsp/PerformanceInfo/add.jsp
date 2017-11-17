@@ -43,15 +43,7 @@
 		success: function(data){
 			if(data=="success"){
 				alert("添加成功！");
-				$.ajax({
-				url:"performanceInfo/showUpdate.do",
-				type:"post",
-				data:{},
-				success: function(data){
-					//刷新页面
-					window.location.reload();
-				}
-			});			
+				showUpdate();		
 			}else{
 				alert("添加失败");
 			}
@@ -77,7 +69,19 @@
 			if(data=="success"){
 				alert("添加成功！");
 				//更新显示列表
-				$.ajax({
+				showUpdate();
+			}else{
+				alert("添加失败");
+			}
+		}
+	});	
+	
+	}
+	/*
+	*显示添加的记录
+	*/
+	function showUpdate(){
+		$.ajax({
 				url:"performanceInfo/showUpdate.do",
 				type:"post",
 				data:{},
@@ -85,13 +89,7 @@
 					//刷新页面					
 					window.location.reload();
 				}
-			});
-			}else{
-				alert("添加失败");
-			}
-		}
-	});	
-	
+		});
 	}
 	/*
 	*获取radio选中的值
@@ -240,7 +238,7 @@ function showEquipmentName(){
 
 			<br />
 			<div class="subfiled-style2 clearfix">
-				<h2>已添加信息</h2>
+				<h2><a href="javascript:showUpdate();">已添加信息</a></h2>				
 			</div>
 
 			<!--表格开始-->
@@ -251,6 +249,7 @@ function showEquipmentName(){
 					<table>
 						<thead>
 							<tr>
+								<th>全选：<input type="checkbox"></th>
 								<th>收款类型</th>
 								<th>类型</th>
 								<th>数量</th>
@@ -262,6 +261,7 @@ function showEquipmentName(){
 							<tbody>
 								<tr>
 									<div id="newInfo">
+										<td><input type="checkbox"></td>
 										<td>${infoVo.equipmentId==0?'设备':'服务费'}</td>
 										<td>${infoVo.type}</td>
 										<td>${infoVo.quantity}</td>
