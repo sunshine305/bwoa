@@ -90,7 +90,7 @@
 								<tbody>
 									<tr >
 										<td><a href="javascript:showXHDetail();">暂无数据</a></td>
-										<td><a href="javascript:showDetail();">暂无数</a></td>
+										<td><a href="javascript:showOldDetail();">暂无数</a></td>
 										<td><a href="javascript:showDetail();">暂无数据</a></td>
 									</tr>
 									
