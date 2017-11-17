@@ -16,12 +16,6 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/sapar.js"></script>
 <script type="text/javascript" src="js/WdatePicker.js"></script>
-<link href="<%=path%>/ztree/css/zTreeStyle/zTreeStyle.css"
-	type="text/css" rel="stylesheet">
-<script type="text/javascript"
-	src="<%=path%>/ztree/js/jquery.ztree.core.min.js"></script>
-<script type="text/javascript"
-	src="<%=path%>/ztree/js/jquery.ztree.excheck.min.js"></script>
 <script type="text/javascript" src="js/total.js"></script>
 <script type="text/javascript" src="js/detailc.js"></script>
 <title>统计</title>
@@ -34,15 +28,6 @@
 			<div class="subfiled clearfix">
 				<h2>数据统计</h2>
 			</div>
-			<div style="position: absolute; left: 20px; top: 50px;">
-				<!-- 菜单实现 -->
-				<div class="zTreeDemoBackground left"
-					style="position: absolute; left: 0px;">
-					<ul id="treeDemo" class="ztree"></ul>
-				</div>
-			</div>
-			<div
-				style="position: absolute; left: 25%; top: 50px; width: 75%; height: 100%">
 				<div class="subfiled-content">
 					<div class="search-box clearfix">
 						<div class="kv-item clearfix">
@@ -82,16 +67,20 @@
 							<table>
 								<thead>
 									<tr>
-										<th class="num">新户数量</th>
-										<th class="name">服务费(老)</th>
-										<th class="process">通用设备销售数量</th>
+										<th class="name">区域</th>
+										<th class="num">新户售盘数</th>
+										<th class="num">老户服务费</th>
+										<th class="num">通用设备销售数量</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr >
+										<td id="areaOpen">	
+											<a href="javascript:showArea();" >+ 南宁分公司</a>
+										</td>
 										<td><a href="javascript:showXHDetail();">暂无数据</a></td>
 										<td><a href="javascript:showOldDetail();">暂无数</a></td>
-										<td><a href="javascript:showDetail();">暂无数据</a></td>
+										<td><a href="javascript:showDetail();">暂无数据</a></td>			
 									</tr>
 									
 

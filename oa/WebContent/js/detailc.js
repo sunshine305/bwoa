@@ -1,8 +1,14 @@
 /**
  * 
  */
+function showArea() {
+	alert("1");
+	document.getElementById('areaOpen').innerHTML = "<a href=\"javascript:showArea();\">- 南宁分公司</a>";
+}
 function showXHDetail() {
-		var content = "<br><br><br><div class=\"alert alert-warning\" role=\"alert\">明细</div>"+
+	showArea();
+	
+	/*	var content = "<br><br><br><div class=\"alert alert-warning\" role=\"alert\">明细</div>"+
 						//表格开始
 						"<div class=\"table\">"+
 							//表格操作
@@ -23,6 +29,7 @@ function showXHDetail() {
 		document.getElementById('detail').innerHTML = content;
 		//alert(content);
 		document.getElementById('detail').style.display="";
+		*/
 
 	} 
 function showOldDetail() {
